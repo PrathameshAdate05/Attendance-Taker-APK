@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Attendance Taker</string>
+    <string name="splash_title">Attendance Taker</string>
+    <string name="splash_sub_title">Manage Your All Attendances here…</string>
 </resources>
