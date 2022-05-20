@@ -4,10 +4,16 @@
     <string name="splash_sub_title">Manage Your All Attendances here…</string>
 
     <string name="required">Required*</string>
+    <string name="home_Info">Fill Following Details To Proceed </string>
+    <string name="button_Text"> Proceed </string>
 
     // hints
     <string name="hint_classname">Class Name</string>
     <string name="hint_subject_name">Subject Name</string>
     <string name="hint_div">Div</string>
+    <string name="hint_date">Date</string>
+    <string name="hint_time">Time</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_student_count">Student Count</string>
 
 </resources>

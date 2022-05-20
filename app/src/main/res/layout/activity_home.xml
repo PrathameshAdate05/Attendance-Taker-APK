@@ -30,6 +30,22 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <TextView
+        android:id="@+id/TV_HomeInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/caveat_brush"
+        android:paddingHorizontal="5dp"
+        android:text="@string/home_Info"
+        android:textAlignment="center"
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+
 
     <!--    Class Name EditText  -->
     <com.google.android.material.textfield.TextInputLayout
@@ -50,13 +66,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+        app:layout_constraintTop_toBottomOf="@+id/TV_HomeInfo">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ET_SubjectName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- EditText ClassName-->
@@ -118,12 +135,18 @@
 
     <!--    DatePicker-->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/TIL_DatePicker"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="150dp"
+        android:layout_width="155dp"
         android:layout_height="wrap_content"
-        android:hint="Date"
-        app:layout_constraintEnd_toStartOf="@+id/textInputLayout5"
+        android:layout_marginTop="5dp"
+        android:hint="@string/hint_date"
+        app:endIconTint="@color/green"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/red"
+        app:helperText="@string/required"
+        app:helperTextEnabled="true"
+        app:layout_constraintEnd_toStartOf="@+id/TIL_TimePicker"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TIL_ClassName">
@@ -132,7 +155,8 @@
             android:id="@+id/ET_DatePicker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none" />
+            android:inputType="none"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--    Hidden DatePicker Button-->
@@ -140,37 +164,116 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#0000000f"
-        android:onClick="showTimePickerDialog"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout3"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout3"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout3" />
+        android:onClick="showDatePickerDialog"
+        app:layout_constraintBottom_toBottomOf="@+id/TIL_DatePicker"
+        app:layout_constraintEnd_toEndOf="@+id/TIL_DatePicker"
+        app:layout_constraintStart_toStartOf="@+id/TIL_DatePicker"
+        app:layout_constraintTop_toTopOf="@+id/TIL_DatePicker"
+        tools:ignore="UsingOnClickInXml,SpeakableTextPresentCheck" />
 
 
-<!--   TimePicker -->
+    <!--   TimePicker -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout5"
-        android:layout_width="wrap_content"
+        android:id="@+id/TIL_TimePicker"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="135dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="@string/hint_time"
+        app:endIconTint="@color/green"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/red"
+        app:helperText="@string/required"
+        app:helperTextEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout3"
+        app:layout_constraintStart_toEndOf="@+id/TIL_DatePicker"
         app:layout_constraintTop_toBottomOf="@+id/TIL_Div">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ET_TimePicker"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!--    Hidden TimePicker Button-->
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:onClick="click"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#0000000f"
+        android:onClick="showTimePickerDialog"
+        app:layout_constraintBottom_toBottomOf="@+id/TIL_TimePicker"
+        app:layout_constraintEnd_toEndOf="@+id/TIL_TimePicker"
+        app:layout_constraintStart_toStartOf="@+id/TIL_TimePicker"
+        app:layout_constraintTop_toTopOf="@+id/TIL_TimePicker"
+        tools:ignore="OnClick,UsingOnClickInXml,SpeakableTextPresentCheck" />
 
+
+    <!--    EditText Email-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TIL_Email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:hint="@string/hint_email"
+        app:endIconTint="@color/green"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/red"
+        app:helperText="@string/required"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TIL_DatePicker">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ET_Email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textEmailAddress"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    EditText Student Count-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TIL_Count"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="@string/hint_student_count"
+        app:endIconTint="@color/green"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/red"
+        app:helperText="@string/required"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TIL_Email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ET_Count"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:textAlignment="center" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:text="@string/button_Text"
+        android:elevation="5dp"
+        android:layout_marginTop="40dp"
+        app:icon="@drawable/ic_baseline_proceed"
+        android:backgroundTint="@color/green"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="proceedToAttendance"
+        app:layout_constraintTop_toBottomOf="@+id/TIL_Count"
+        tools:ignore="UsingOnClickInXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
