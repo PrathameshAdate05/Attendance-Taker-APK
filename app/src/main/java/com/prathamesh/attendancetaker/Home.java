@@ -1,9 +1,11 @@
 package com.prathamesh.attendancetaker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -20,8 +22,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Objects;
-import java.util.SimpleTimeZone;
-import java.util.regex.Pattern;
+
 
 
 public class Home extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
@@ -32,6 +33,7 @@ public class Home extends AppCompatActivity implements DatePickerDialog.OnDateSe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
@@ -217,6 +219,7 @@ public class Home extends AppCompatActivity implements DatePickerDialog.OnDateSe
 
     }
 
+    // proceed button
     public void proceedToAttendance(View view) {
         if(TextUtils.isEmpty(ET_SubjectName.getText())){
             TIL_SubjectName.setError("Enter Subject Name");
@@ -233,7 +236,16 @@ public class Home extends AppCompatActivity implements DatePickerDialog.OnDateSe
         }else if (TextUtils.isEmpty(ET_StudentCount.getText())){
             TIL_StudentCount.setError("Enter Count");
         } else {
-            Toast.makeText(this, makeFileName(ET_SubjectName.getText().toString(),ET_ClassName.getText().toString(),ET_Div.getText().toString(),ET_DatePicker.getText().toString(),ET_TimePicker.getText().toString()), Toast.LENGTH_SHORT).show();
+
+            Intent intentSendData = new Intent(Home.this,AttendanceActivity.class);
+            intentSendData.putExtra(Constants.SubjectName,ET_SubjectName.getText().toString());
+            intentSendData.putExtra(Constants.ClassName,ET_ClassName.getText().toString());
+            intentSendData.putExtra(Constants.Div,ET_Div.getText().toString());
+            intentSendData.putExtra(Constants.Date,ET_DatePicker.getText().toString());
+            intentSendData.putExtra(Constants.Time,ET_TimePicker.getText().toString());
+            intentSendData.putExtra(Constants.Email,ET_Email.getText().toString());
+            intentSendData.putExtra(Constants.StudentCount,ET_StudentCount.getText().toString());
+            startActivity(intentSendData);
         }
 
     }

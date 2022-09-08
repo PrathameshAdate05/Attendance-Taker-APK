@@ -15,5 +15,18 @@
     <string name="hint_time">Time</string>
     <string name="hint_email">Email</string>
     <string name="hint_student_count">Student Count</string>
+    <string name="attendance_activity_title">Attendance</string>
+
+    // attendance activity strings
+    <string name="show_classname">Class Name:</string>
+    <string name="show_subject_name">Subject Name:</string>
+    <string name="show_div">Div:</string>
+    <string name="show_date">Date:</string>
+    <string name="show_time">Time</string>
+    <string name="show_email">Email</string>
+    <string name="show_student_count">Student Count</string>
+    <string name="present">Present:</string>
+    <string name="absent">Absent:</string>
+
 
 </resources>

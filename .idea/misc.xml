@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Projects/Attendance-Taker-APK/app/src/main/res/drawable/absent_button.xml" value="0.1795" />
+        <entry key="..\:/Android Projects/Attendance-Taker-APK/app/src/main/res/drawable/constraint_info_border.xml" value="0.1795" />
+        <entry key="..\:/Android Projects/Attendance-Taker-APK/app/src/main/res/drawable/ic_absent.xml" value="0.1795" />
+        <entry key="..\:/Android Projects/Attendance-Taker-APK/app/src/main/res/drawable/ic_present.xml" value="0.1795" />
+        <entry key="..\:/Android Projects/Attendance-Taker-APK/app/src/main/res/drawable/present_button.xml" value="0.1795" />
+        <entry key="..\:/Android Projects/Attendance-Taker-APK/app/src/main/res/drawable/textview_border.xml" value="0.1795" />
         <entry key="..\:/Android Projects/Attendance-Taker-APK/app/src/main/res/font/.xml" value="0.3046875" />
+        <entry key="..\:/Android Projects/Attendance-Taker-APK/app/src/main/res/layout/activity_attendance.xml" value="0.27447916666666666" />
         <entry key="..\:/Android Projects/Attendance-Taker-APK/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Android Projects/Attendance-Taker-APK/app/src/main/res/layout/activity_main.xml" value="0.264" />
       </map>
